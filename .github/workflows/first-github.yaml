@@ -1,0 +1,20 @@
+name: Amit's Github Workflow
+on: 
+  push:
+    branches:
+      - main
+#env variavbles
+env:
+  PROJECT_NAME: githubactions-demo
+  COURSE: MLOps-By-Amit
+
+jobs:
+  Amit's-Job-Name:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I am Amit"
+      - name: checkout repo
+        uses: actions/checkout@v4
+      - run: echo "I am %{{  github.actor  }}"
+      - run: printenv
+      - run: echo "this is the env ${{  env.PROJECT_NAME  }} and ${{  env.COURSE  }}"
